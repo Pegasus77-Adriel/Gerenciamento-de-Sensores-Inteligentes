@@ -102,7 +102,7 @@ class Broker:
             dic_dados = {"fonte": "app", "tipo": "amostragem","tempo":segundos}
             dic_dados_bytes = json.dumps(dic_dados).encode('utf-8')
             dispositivo.sendall(dic_dados_bytes)
-            sleep(1)
+            sleep(2)
             dispositivo_dados = broker.dados_dispositivos[int(matricula)-1]
             msg = f'O dispositivo com a matricula {matricula} está com o tempo de amostragem: {dispositivo_dados["intervalo_envio"]}'
             return jsonify({"mensagem":msg}), 200
@@ -117,7 +117,7 @@ class Broker:
             dic_dados = {"fonte": "app", "tipo": "comando","operacao":comando}
             dic_dados_bytes = json.dumps(dic_dados).encode('utf-8')
             dispositivo.sendall(dic_dados_bytes)
-            sleep(1)
+            sleep(2)
             dispositivo_dados = broker.dados_dispositivos[int(matricula)-1]
             msg = f'O dispositivo com a matricula {matricula} está {dispositivo_dados["status"]}'
             return jsonify({"mensagem":msg}), 200
