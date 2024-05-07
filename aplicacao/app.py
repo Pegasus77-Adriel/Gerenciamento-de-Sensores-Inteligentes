@@ -74,7 +74,7 @@ if __name__ == '__main__':
             
             elif(numero == 1):
                 
-                os.system('cls')
+                os.system('clear')
                 matricula = input("Digite a matricula do sensor que deseja solicitar os dados:\n")
                 
                 
@@ -85,7 +85,7 @@ if __name__ == '__main__':
             
             elif(numero == 2):
                 
-                os.system('cls')
+                os.system('clear')
                 matricula = input("Digite a matricula do sensor que deseja enviar o comando:\n")
                 
                 if(verificar_numero(matricula)):
@@ -100,7 +100,7 @@ if __name__ == '__main__':
                     
             elif(numero == 3):
                 
-                os.system('cls')
+                os.system('clear')
                 matricula = input("Digite a matricula do sensor que deseja alterar o tempo de amostragem:\n")
                 
                 if(verificar_numero(matricula)):
