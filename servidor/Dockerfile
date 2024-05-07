@@ -9,7 +9,7 @@ COPY requirements.txt .
 
 # Instale as dependências do seu projeto
 RUN pip install --no-cache-dir -r requirements.txt
-
+EXPOSE 59998
 # Copie todo o código para o contêiner
 COPY . .
 
