@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Comando padrão para executar sua aplicação
-CMD ["python", "app.py", "broker.py", "dispositivos.py"]
+CMD ["python","dispositivos.py"]

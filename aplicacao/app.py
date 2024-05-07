@@ -33,11 +33,10 @@ def exibir_opcoes():
     print("1. Solicitar dados de um sensor:")
     print("2. Enviar comando para um sensor Ligar ou Desligar")
     print("3. Alterar tempo de amostragem ")
-    print("4. Ligar")
-    print("5. Desligar\n")
+    print("4. Sair")
+   
     
-
-
+    
 def verificar_numero(numero):
     
     try:
@@ -115,7 +114,10 @@ if __name__ == '__main__':
                        print(f"Tempo digitado '{segundos}' não reconhecido!")
                    
                 else:
-                    print(f"Matricula digitada '{matricula}' não reconhecida!")      
+                    print(f"Matricula digitada '{matricula}' não reconhecida!")
+                          
+            elif(numero == 4):
+                print("Finalizando...")
                 
        except ValueError:
            print("Entrada inválida! Por favor, digite apenas números.")

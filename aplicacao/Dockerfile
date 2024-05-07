@@ -10,8 +10,8 @@ COPY requirements.txt .
 # Instale as dependências do seu projeto
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copie todo o código para o contêiner
+#
 COPY . .
 
 # Comando padrão para executar sua aplicação
-CMD ["python", "app.py", "broker.py", "dispositivos.py"]
+CMD ["python", "app.py"]

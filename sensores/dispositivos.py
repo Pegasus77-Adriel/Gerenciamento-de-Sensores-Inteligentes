@@ -4,7 +4,7 @@ import threading
 from random import randint
 from datetime import datetime
 from time import sleep
-
+import os
 
 
 
@@ -105,6 +105,15 @@ class Dispositivo:
         
         print(f'Tempo de amostragem do dispositivo atualizado para {self.intervalo_envio}!')
         
+    def dados_atuais(self):
+        
+        data_hora_atuais = datetime.now()
+        data_hora = data_hora_atuais.strftime('%d-%m-%Y %H:%M:%S')
+        dic_dados = { "matricula" : self.matricula, "status" : self.status, "temperatura": str(self.temperatura) +'°C' , "umidade":str(self.umidade) + '%',
+                              "intervalo_envio":self.intervalo_envio, "data_hora" : data_hora}
+        print(dic_dados)
+        
+        
     def setTemperatura(self):
 
         n = randint(1,2)
@@ -143,31 +152,75 @@ class Dispositivo:
                 
                 client_env.sendto(dic_dados_bytes, (self.HOST, self.UDP_PORT))
                 
-                print("Mensagem enviada: ", dic_dados)
             
-            
-    def receber_dados(self, client_rec):
-        
-          while True:
-            # Recebe os dados dos dispositivos através da conexão UDP
-            dados_udp, HOST_client_udp = client_rec.recvfrom(self.BUFFER_SIZE)
-            msg = dados_udp.decode()
-            msg = json.loads(msg)
-            
-            print("Dados recebidos dispositivo: ", HOST_client_udp, "Mensagem: ", msg)
             
 
 def exibir_opcoes():
     print("\n===== Bem-vindo ao Menu =====\n")
     print("Escolha uma das opções abaixo:")
-    print("1. Monitorar entrada e saida de dados")
-    print("2. Alterar tempo de amostragem ")
-    print("3. Ligar")
-    print("4. Desligar\n")
+    print("1. Ligar sensor")
+    print("2. Desligar sensor")
+    print("3. Alterar tempo de amostragem ")
+    print("4. Solicitar dados atuais")
+    print("5. Sair\n")
+    
 
-
+def verificar_numero(numero):
+    
+    try:
+        numero = int(numero)
+        return True
+    
+    except:
+         return False
     
 dispositvo = Dispositivo()
 dispositvo.main()
-    
+sleep(5)
 
+while(True):
+       exibir_opcoes()
+       
+       try:
+            entrada = input("Digite um número:\n")
+            numero = int(entrada)
+            
+            
+            if(numero > 5 or numero <= 0):
+                
+                    print("Entrada inválida! Por favor, digite um número válido.")
+        
+            
+            elif(numero == 1):
+                
+                os.system('cls')
+                dispositvo.setStatus("ligar")
+                
+            
+            elif(numero == 2):
+                
+                os.system('cls')
+                dispositvo.setStatus("desligar")
+                
+                    
+            elif(numero == 3):
+               
+                segundos = input("Digite o intervalo de envio em segundos:\n")
+                   
+                if(verificar_numero(segundos)):
+                       
+                    dispositvo.setAmostragem(segundos)
+                        
+                else: 
+                       print(f"Tempo digitado '{segundos}' não reconhecido!")
+            
+            elif(numero == 4):
+                dispositvo.dados_atuais()
+            
+            elif(numero == 5):
+                print("Finalizando...")
+                break
+            sleep(7)
+       except ValueError:
+           print("Entrada inválida! Por favor, digite apenas números.")
+       
