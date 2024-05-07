@@ -194,13 +194,13 @@ while(sair == False):
             
             elif(numero == 1):
                 
-                os.system('cls')
+                os.system('clear')
                 dispositvo.setStatus("ligar")
                 
             
             elif(numero == 2):
                 
-                os.system('cls')
+                os.system('clear')
                 dispositvo.setStatus("desligar")
                 
                     
