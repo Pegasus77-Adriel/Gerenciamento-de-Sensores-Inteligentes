@@ -49,7 +49,7 @@ class Dispositivo:
     def conexaoTCP(self, socket_tcp):
         socket_tcp.connect((self.HOST,self.TCP_PORT))
         
-        while True:
+        while (sair == False):
             mensagem = socket_tcp.recv(self.BUFFER_SIZE)
             dados = mensagem.decode('utf-8')
             if not dados:
@@ -137,7 +137,7 @@ class Dispositivo:
        
     def enviar_dados(self, client_env):
         
-        while(True):
+        while(sair == False):
             sleep(self.intervalo_envio)
             if(self.status == "Ligado"):
             
@@ -173,12 +173,13 @@ def verificar_numero(numero):
     
     except:
          return False
-    
+
+sair = False
 dispositvo = Dispositivo()
 dispositvo.main()
 sleep(5)
 
-while(True):
+while(sair == False):
        exibir_opcoes()
        
        try:
@@ -219,7 +220,8 @@ while(True):
             
             elif(numero == 5):
                 print("Finalizando...")
-                break
+                sair = True
+                
             sleep(7)
        except ValueError:
            print("Entrada inválida! Por favor, digite apenas números.")
