@@ -81,11 +81,11 @@
      ```sh
      docker run --network=host -it servidor-1
      ```
-* execute a imagem sensor-1 :
+* execute a imagem sensor-1:
      ```sh
        docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' sensor-1
      ```
 * execute a imagem app-1:
-       ```sh
+     ```sh
        docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' app-1
       ```
