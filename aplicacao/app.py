@@ -1,33 +1,33 @@
 import requests
-import json
 from time import sleep
 import os
-
 class App:
     
     def __init__(self):
         
-            self.HOST = '127.0.0.1'
+            
+            self.HOST = "http://"+ os.getenv('SERVER-IP') +":59998"
             self.BUFFER_SIZE = 2048
      
     def alterar_temp_amostragem(self, segundos, matricula):
-        url = f'http://localhost:59998/alterar_temp_amostragem/{segundos}/{matricula}'  # URL do servidor
-        #headers = {'Content-Type': 'application/json'}
+        url = f'{self.HOST}/alterar_temp_amostragem/{segundos}/{matricula}'  # URL do servidor
+        
         response = requests.get(url)
         print(response.json())
 
     def enviar_comando(self, comando, matricula):
-        url = f'http://localhost:59998/enviar_comando/{comando}/{matricula}'  # URL do servidor
-        #headers = {'Content-Type': 'application/json'}
+        url = f'{self.HOST}/enviar_comando/{comando}/{matricula}'  # URL do servidor
+        
         response = requests.get(url)
         print(response.json())
         
     def pedir_medicao(self,matricula):
-        url = f'http://localhost:59998/receber_medicao/{matricula}'  # URL do servidor
-        #headers = {'Content-Type': 'application/json'}
+        url = f'{self.HOST}/receber_medicao/{matricula}'  # URL do servidor
+        
         response = requests.get(url)
         print(response.json())
 
+    #Prints para o MENU
 def exibir_opcoes():
     print("\n===== Bem-vindo ao Menu =====\n")
     print("1. Solicitar dados de um sensor:")
@@ -35,8 +35,7 @@ def exibir_opcoes():
     print("3. Alterar tempo de amostragem ")
     print("4. Sair")
    
-    
-    
+# Verifica se um número foi digitado ou não
 def verificar_numero(numero):
     
     try:
@@ -46,15 +45,7 @@ def verificar_numero(numero):
     except:
          return False
 
-         
-def analisar_entrada(entrada):
-    
-    if(entrada == 1):
-        matricula = input("Digite a matricula do sensor que deseja solicitar os dados:\n")
-        verificar_numero(matricula)
-        app.pedir_medicao(matricula)
-
-
+#Loop principal
 if __name__ == '__main__':
     app = App()
     

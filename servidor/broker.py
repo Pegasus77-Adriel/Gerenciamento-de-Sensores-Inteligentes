@@ -9,7 +9,7 @@ class Broker:
   
     def __init__(self):
         
-        self.HOST = '127.0.0.1'
+        self.HOST = socket.gethostbyname(socket.gethostname())
         self.UDP_PORT= 60000
         self.TCP_PORT= 59999
         self.BUFFER_SIZE = 2048
@@ -19,18 +19,12 @@ class Broker:
     def setDispositivos(self,dados):
         self.dispositivos[dados['matricula']] = str(dados)
 
-    def broadcast(self,client):
-        while(True):
-            sleep(12)
-            for matricula, dados in self.dispositivos.items():
-        
-                    dic_dados = { "matricula" : matricula,"comando":"verificar"}
-                    dic_dados_bytes = json.dumps(dic_dados).encode('utf-8')
-                    client.sendto(dic_dados_bytes, (self.HOST, self.PORT_ENV))
+    # Start api-REST
     def rest(self,app):
         
-        app.run(host='127.0.0.1', port = 59998)
-    
+        app.run(self.HOST, port = 59998)
+        
+    # Função main resposável por iniciar as conexões e as threads
     def main(self,rest):
         
         
@@ -59,7 +53,7 @@ class Broker:
         thread3.start()
 
         
-        
+    #Função reponsável receber os dados dos sensores via UDP, e amarzena-los no buffer de dados do broker
     def receber_dados(self, socket_udp):
         
         while True:
@@ -76,10 +70,9 @@ class Broker:
             
             for i in self.dados_dispositivos:
                 print(f'{i}')
-            #print("Dados recebidos dispositivo: ", HOST_client_udp)
-            #print(msg)
             
-    
+            
+    #Função reponsável enviar os comandos para os sensores via TCP-IP 
     def conexaoTCP(self, socket_tcp):
         cont = 0
         while True:
@@ -94,7 +87,7 @@ class Broker:
             dic_dados_bytes = json.dumps(dic_dados).encode('utf-8')
             conn_client_tcp.sendall(dic_dados_bytes)
             
-            
+    #Rota responsável por receber a solicitação vinda da aplicação para alterar o tempo de amostragem dos sensores   
     @app.route('/alterar_temp_amostragem/<segundos>/<matricula>', methods=['GET'])      
     def alterar_temp_amostragem(segundos,matricula):
         
@@ -108,8 +101,8 @@ class Broker:
             return jsonify({"mensagem":msg}), 200
         
         
-            #return jsonify({"mensagem": "Falha na operação"}), 200
-            
+           
+    #Rota responsável por receber a solicitação vinda da aplicação para alterar o status do dispositivo "ligado" ou "desligar" 
     @app.route('/enviar_comando/<comando>/<matricula>', methods=['GET'])      
     def enviar_comando(comando,matricula):
         try:
@@ -125,7 +118,7 @@ class Broker:
         except:
             return jsonify({"mensagem": "Falha na operação"}), 200
 
-    
+    #Rota responsável por receber a solicitação vinda da aplicação para requirir a amostragem de um sensor especifico
     @app.route('/receber_medicao/<matricula>', methods=['GET'])
     def receber_medicao(matricula):
         

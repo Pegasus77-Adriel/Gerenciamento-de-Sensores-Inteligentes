@@ -11,23 +11,22 @@ import os
 class Dispositivo:
     
     def __init__(self):
-            # Gera um número aleatório de 2 dígitos para a matrícula
-            self.matricula = randint(1, 99)
+        
             # Status significa se o dispositivo está ligado ou desligado 
             self.status = "Ligado"
             self.matricula = None
             self.temperatura = 35
             self.umidade = 50 
-            self.HOST = '127.0.0.1'
+            self.HOST = os.getenv('SERVER-IP')
             self.UDP_PORT = 60000
             self.TCP_PORT= 59999
             self.intervalo_envio = 10
             self.BUFFER_SIZE = 2048
             self.socket_udp = None
             self.socket_tcp = None
-            self.monitorar = False
-            #self.client_udp_rec = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            
+           
+        
+     # Função main resposável por iniciar as conexões e as threads       
     def main(self):
         try:
             socket_udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -45,7 +44,7 @@ class Dispositivo:
         thread2 = threading.Thread(target=self.conexaoTCP, args=[socket_tcp])
         thread2.start()
         
-    
+    #Função reponsável receber os comandos providos do broker via TCP-IP
     def conexaoTCP(self, socket_tcp):
         socket_tcp.connect((self.HOST,self.TCP_PORT))
         
@@ -59,6 +58,7 @@ class Dispositivo:
                 dados = json.loads(dados)
                 self.tratar_comandos(dados)
                 
+    #Função reponsável por decodificar os comandos recebidos       
     def tratar_comandos(self, dados):
        
         if (dados["fonte"] == "broker" and dados["tipo"] == "registro"):
@@ -72,7 +72,8 @@ class Dispositivo:
         elif (dados["fonte"] == "app" and dados["tipo"] == "amostragem"):
             self.setAmostragem(dados["tempo"])
             
-    
+            
+    #Função reponsável por enviar os dados pro servidor sempre que algum atributo do sensor é alterado
     def enviar_atualizacao(self):
         
         data_hora_atuais = datetime.now()
@@ -134,7 +135,7 @@ class Dispositivo:
         
         self.umidade = self.umidade + (umidade)
     
-       
+    #Função reponsável por enviar continuamente os dados via UDP para o broker   
     def enviar_dados(self, client_env):
         
         while(sair == False):
@@ -154,7 +155,7 @@ class Dispositivo:
                 
             
             
-
+#Função reponsável pelos prints do MENU 
 def exibir_opcoes():
     print("\n===== Bem-vindo ao Menu =====\n")
     print("Escolha uma das opções abaixo:")
@@ -179,6 +180,7 @@ dispositvo = Dispositivo()
 dispositvo.main()
 sleep(5)
 
+#Loop principal 
 while(sair == False):
        exibir_opcoes()
        
