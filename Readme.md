@@ -70,9 +70,22 @@
      ```
    * Compile o arquivo dispositivos.py:
      ```sh
-       docker build -t servidor-1 .S
+       docker build -t servidor-1 .
      ```
    * retorne a pasta anterior:
        ```sh
        cd ..
+      ```
+5. Execute os containers docker.
+* execute a imagem servidor-1:
+     ```sh
+     docker run --network=host -it servidor-1
+     ```
+* execute a imagem sensor-1 :
+     ```sh
+       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' sensor-1
+     ```
+* execute a imagem app-1:
+       ```sh
+       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' app-1
       ```
