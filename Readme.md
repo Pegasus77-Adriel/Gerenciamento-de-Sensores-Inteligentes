@@ -23,7 +23,7 @@
 ### 
 
 ### Instruções
-
+Observação: O docker deve está previamente instalado na maquina.
 1. Clone o repositório.
    ```sh
    git clone https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes.git
@@ -83,9 +83,10 @@
      ```
 * execute a imagem sensor-1:
      ```sh
-       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' sensor-1
+       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que o container do servidor está rodando' sensor-1
      ```
 * execute a imagem app-1:
      ```sh
-       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que a imagem do servidor está rodando' app-1
+       docker run --network=host -it -e SERVER-IP='coloque o IP da máquina que o container do servidor está rodando' app-1
       ```
+  
