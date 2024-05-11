@@ -96,7 +96,7 @@ O propósito central deste sistema é otimizar a comunicação entre diversos di
 No desenvolvimento do sistema foi utilizado a linguagem de programação Python na versão 3.11.4, bem como as funcionalidades incluídas nas bibliotecas nativas da linguagem, além do framework Flask para implementação da API Rest.
 
 ## 2.1 Sensor e Servidor
-Para a comunicação do [dispositivos](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) com o [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) foi utilizado o protocolo de comunicação UDP e TCP-IP além de um padrão nas trocas de mensagens, como é descrito no diagrama abaixo:
+Para a comunicação do [dispositivos](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) com o [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) foi utilizado o protocolo de comunicação UDP e TCP-IP, inclusive o padrão de mensagens adotados por eles, como é descrito no diagrama abaixo:
 
 ![diagrama sensor e servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/diagrama%20servidor%20e%20sensor.png)
 
@@ -105,7 +105,6 @@ Nesse projeto entre os sensores e o servidor foram utilizados 2 tipos de protoco
 - Protocolo UDP: é um protocolo de comunicação da camada de transporte que oferece um serviço de entrega de dados rápido e eficiente, mas não garante a entrega ou a ordem dos pacotes. Ele é amplamente utilizado em situações onde a perda ocasional de dados não é crítica, como é o caso do envio de dados dos sensores para o servidor.
 - Protocolo TCP-IP: é um protoclo que garante a entrega confiável de dados, verificando e retransmitindo pacotes perdidos. Além disso, o TCP controla o fluxo de dados e adapta a taxa de transmissão para evitar congestionamentos na rede. Sua orientação à conexão estabelece e encerra conexões de forma segura, garantindo a integridade dos dados transmitidos. Essas qualidades tornam o TCP uma escolha amplamente utilizada em aplicações que exigem comunicação confiável e orientada à conexão, por esse motivo esse protocolo foi escolhido para garantir que os comandos enviados pelo servidor sejam entregues de forma confiável para os sensores.
   
-A troca de mensagens entre os sensores e o servidor pode ser vista no diagrama anterior, inclusive o padrão de mensagens adotados por eles.
 ## 2.3 Servidor e Aplicação
 Para a comunicação do [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) com a [aplicação](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/aplicacao/app.py) foi utilizado o protocolo de comunicação HTTP através da implementação da API Rest, como pode ser visto no diagrama abaixo:
 ![diagrama servidor e app](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/diagrama%20servidor%20e%20app.png)
