@@ -109,7 +109,7 @@ A troca de mensagens entre os sensores e o servidor pode ser vista no diagrama a
 ## 2.3 Servidor e Aplicação
 Para a comunicação do [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) com a [aplicação](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/aplicacao/app.py) foi utilizado o protocolo de comunicação HTTP através da implementação da API Rest, como pode ser visto no diagrama abaixo:
 ![diagrama servidor e app](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/diagrama%20servidor%20e%20app.png)
-No diagrama acima por exemplo, pode ser notado a rota da API Rest utilizada para alterar o intervalo de envio de dados constantes do sensor para o servidor.
+No diagrama acima por exemplo, pode ser notado a rota da API Rest utilizada pela aplicação para a alteração no intervalo de envio de dados constantes do sensor para o servidor.
 ## 2.4 protocolo HTTP e API Rest
 - HTTP: é o protocolo usado para comunicação na web, que opera em um modelo cliente-servidor, onde o cliente faz requisições ao servidor, que responde com os dados solicitados. Geralmente utiliza os métodos de requisição como GET e POST, que são usados para receber e enviar dados pro servidor.
 
