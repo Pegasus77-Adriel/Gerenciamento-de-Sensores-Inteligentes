@@ -123,3 +123,10 @@ O [sensor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Intelig
 ## 2.7 Servidor
 O [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py)
 é responsável por receber os dados dos sensores e armazena-los em um buffer interno, além disso tem o papel de tratar as requisições (requests) da aplicação, por meio do processamento das informações e de enviar a resposta adequada para cada solicitação. Desse modo, o servidor interage com a aplicação através da API Rest (HTTP), e recebe dados dos sensores via UDP, bem como envia comandos para os sensores via TCP.
+
+As rotas possíveis para comunicação com a aplicação:
+- `/alterar_temp_amostragem/<segundos>/<matricula>`
+Usada para alterar o intervalo de tempo de envio de um determinado sensor para o servidor.
+
+É necessário indicar os **segundos** e a **matricula** do sensor
+
