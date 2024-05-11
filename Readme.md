@@ -129,5 +129,18 @@ As rotas possíveis para comunicação com a aplicação:
   
   Usada para alterar o intervalo de tempo de envio de um determinado sensor para o servidor.
 
-  É necessário indicar os **segundos** e a **matricula** do sensor
+  É necessário indicar os **segundos** e a **matricula** do sensor.
+
+- `/enviar_comando/<comando>/<matricula>`
+  
+  Usada para enviar o comando de **ligar** ou **desligar** para um sensor.
+
+  É necessário indicar o **comando** e a **matricula** do sensor.
+
+  - `/receber_medicao/<matricula>`
+  
+  Usada para solicitar a ultima medição de um determinado sensor.
+
+  É necessário indicar apenas a **matricula**.
+
 
