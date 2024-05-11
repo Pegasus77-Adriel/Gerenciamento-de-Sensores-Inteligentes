@@ -105,3 +105,6 @@ Nesse projeto entre os sensores e o servidor foram utilizados 2 tipos de protoco
 - Protocolo TCP-IP: é um protoclo que garante a entrega confiável de dados, verificando e retransmitindo pacotes perdidos. Além disso, o TCP controla o fluxo de dados e adapta a taxa de transmissão para evitar congestionamentos na rede. Sua orientação à conexão estabelece e encerra conexões de forma segura, garantindo a integridade dos dados transmitidos. Essas qualidades tornam o TCP uma escolha amplamente utilizada em aplicações que exigem comunicação confiável e orientada à conexão, por esse motivo esse protocolo foi escolhido para garantir que os comandos enviados pelo servidor sejam entregues de forma confiável para os sensores.
   
 A troca de mensagens entre os sensores e o servidor pode ser vista no diagrama anterior, inclusive o padrão de mensagens adotados por eles.
+
+## 2.2 protcolo HTTP e a API Rest
+
