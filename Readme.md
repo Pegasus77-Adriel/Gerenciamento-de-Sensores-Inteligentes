@@ -92,9 +92,11 @@ Observação: O docker deve está previamente instalado na maquina.
 # Gerenciamento inteligente de dispositivos IoT
 O propósito central deste sistema é otimizar a comunicação entre diversos dispositivos e suas respectivas aplicações. Isso abrange não apenas a capacidade das aplicações de receber dados remotamente dos dispositivos, mas também de controlar esses dispositivos de forma eficaz. Para alcançar esse propósito, o sistema incorpora protocolos de comunicação como UDP, TCP e HTTP, todos concebidos para assegurar a confiabilidade do serviço.
 
-## Solução do problema
+## 2 Solução do problema
 Para desenvolver o sistema foi utilizado a linguagem de programação Python na versão 3.11.4, bem como as funcionalidades incluídas nas bibliotecas nativas da linguagem, além do framework Flask para implementação da API Rest.
 
 Para a comunicação do [dispositivos](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) com o [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) foi utilizado o protocolo de comunicação UDP e TCP-IP além de um padrão nas trocas de mensagens, como é descrito no diagrama abaixo:
 
 ![diagrama sensor e servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/diagrama%20servidor%20e%20sensor.png)
+
+##
