@@ -107,4 +107,5 @@ Nesse projeto entre os sensores e o servidor foram utilizados 2 tipos de protoco
 A troca de mensagens entre os sensores e o servidor pode ser vista no diagrama anterior, inclusive o padrão de mensagens adotados por eles.
 
 ## 2.2 protocolo HTTP e API Rest
+- HTTP: é o protocolo usado para comunicação na web, que opera em um modelo cliente-servidor, onde o cliente faz requisições ao servidor, que responde com os dados solicitados. Geralmente utiliza os métodos de requisição como GET e POST, que são usados para receber e enviar dados pro servidor.
 
