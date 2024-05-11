@@ -137,7 +137,7 @@ As rotas possíveis para comunicação com a aplicação:
 
   É necessário indicar o **comando** e a **matricula** do sensor.
 
-  - `/receber_medicao/<matricula>`
+- `/receber_medicao/<matricula>`
   
   Usada para solicitar a ultima medição de um determinado sensor.
 
