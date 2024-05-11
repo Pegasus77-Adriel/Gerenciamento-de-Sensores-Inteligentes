@@ -145,4 +145,4 @@ As rotas possíveis para comunicação com a aplicação:
   
 ## 2.8 Aplicação
 
-A [aplicação](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/aplicacao/app.py) tem como objetivo fazer o gerenciamento dos sensores, utilizando-se do servidor como intermediário para a comunicação entre as duas partes (sensor e aplicação). Por conta disso, a aplicação é capaz de realizar comandos de ligar ou desligar um sensor facilmente atráves da requisições enviadas ao servidor, do mesmo modo que consegue receber dados remotamente de um sensor. 
+A [aplicação](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/aplicacao/app.py) tem como objetivo fazer o gerenciamento dos sensores, utilizando-se do servidor como intermediário para a comunicação entre as duas partes (sensor e aplicação). Por esse motivo, a aplicação é capaz de realizar comandos de ligar ou desligar um sensor facilmente atráves das requisições enviadas ao servidor, do mesmo modo que consegue receber dados remotamente de um sensor. 
