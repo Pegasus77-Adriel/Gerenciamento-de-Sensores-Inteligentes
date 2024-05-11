@@ -118,4 +118,5 @@ Os códigos do sensor e do servidor utilizam threads para receber e enviar mensa
 Uma thread pode ser descrita como uma unidade básica de processamento dentro de um programa, capaz de executar tarefas relacionadas à aplicação principal de forma independente. A utilização de threads permite que várias atividades ocorram simultaneamente, o que faz com que diferentes partes do sistema executem suas tarefas quase ao mesmo tempo, embora isso possa criar uma impressão de paralelismo que não é totalmente verdade.
 
 No código o sensor utiliza uma thread para enviar as medições constantimente via UDP para o servidor, e utiliza outra para receber os comandos via TCP provindos do servidor. Já o servidor, usa uma thread para receber os dados dos sensores via UDP, outra thread para realizar conexões TCP com os sensores, e por fim utiliza outra para comunicação com a aplicação. 
-, 
+## 2.6 Sensor
+O [sensor] tem o papel de simular dados como temperatura e umidade, ajustando esses valores de forma aleatória para garantir uma variação constante. Esses dados gerados são então enviados via UDP de maneira regular para o servidor em intervalos predefinidos.
