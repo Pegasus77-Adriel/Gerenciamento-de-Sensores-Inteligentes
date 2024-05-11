@@ -142,5 +142,7 @@ As rotas possíveis para comunicação com a aplicação:
   Usada para solicitar a ultima medição de um determinado sensor.
 
   É necessário indicar apenas a **matricula**.
+  
+## 2.8 Aplicação
 
-
+A [aplicação](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/aplicacao/app.py) tem como objetivo fazer o gerenciamento dos sensores, utilizando-se do servidor como intermediário entre as duas partes (sensor e aplicação). 
