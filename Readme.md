@@ -95,4 +95,6 @@ O propósito central deste sistema é otimizar a comunicação entre diversos di
 ## Solução do problema
 Para desenvolver o sistema foi utilizado a linguagem de programação Python na versão 3.11.4, bem como as funcionalidades incluídas nas bibliotecas nativas da linguagem, além do framework Flask para implementação da API Rest.
 
-Para a comunicação do [dispositivos](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) com o [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) foi utlizado o protoc
+Para a comunicação do [dispositivos](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) com o [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/servidor/broker.py) foi utilizado o protocolo de comunicação UDP e TCP-IP, como é descrito no diagrama abaixo:
+
+![diagrama sensor e servidor] 
