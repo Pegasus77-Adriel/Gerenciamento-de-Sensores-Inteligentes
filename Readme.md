@@ -111,4 +111,4 @@ Para a comunicação do [servidor](https://github.com/Pegasus77-Adriel/Gerenciam
 No diagrama acima por exemplo, pode ser notado uma das rota da API Rest, sendo essa utilizada pela aplicação para a alteração do intervalo de envio de dados constantes do sensor para o servidor, bem como pode ser visto também uma resposta do servidor para a respectiva requição da aplicação. 
 ## 2.4 protocolo HTTP e API Rest
 - HTTP: é o protocolo usado para comunicação na web, que opera em um modelo cliente-servidor, onde o cliente faz requisições ao servidor, que responde com os dados solicitados. Geralmente utiliza os métodos de requisição como GET e POST, que são usados para receber e enviar dados pro servidor.
-
+- API Rest: Em conjunto com o HTTP, as APIs REST proporcionam uma maneira eficiente e flexível para que aplicativos se comuniquem. Elas utilizam solicitações HTTP, incluindo os verbos GET, POST, PUT e DELETE, para realizar operações em recursos específicos. Esses recursos são acessados através de URLs e os dados geralmente são retornados nos formatos JSON ou XML. Essa abordagem padronizada facilita a integração entre sistemas e serviços web.
