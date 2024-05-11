@@ -121,4 +121,4 @@ No código o sensor utiliza uma thread para enviar as medições constantimente 
 ## 2.6 Sensor
 O [sensor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Inteligentes/blob/main/sensores/dispositivos.py) tem o papel de simular dados como temperatura e umidade, ajustando esses valores de forma aleatória para garantir uma variação constante. Esses dados gerados são então enviados via UDP de maneira regular para o servidor em intervalos de tempo predefinidos, os dados são enviados no formato JSON.
 ## 2.7 Servidor
-O servidor é responsável por receber os dados dos sensores e armazena-los em um buffer interno, além disso tem o papel de tratar as requisições (requests) da aplicação, por meio do processamento das informações e enviar a resposta adequada para cada solicitação.
+O servidor é responsável por receber os dados dos sensores e armazena-los em um buffer interno, além disso tem o papel de tratar as requisições (requests) da aplicação, por meio do processamento das informações e de enviar a resposta adequada para cada solicitação.
