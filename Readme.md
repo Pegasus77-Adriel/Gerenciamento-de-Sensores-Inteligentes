@@ -127,7 +127,7 @@ O [servidor](https://github.com/Pegasus77-Adriel/Gerenciamento-de-Sensores-Intel
 As rotas possíveis para comunicação com a aplicação:
 - `/alterar_temp_amostragem/<segundos>/<matricula>`
   
-Usada para alterar o intervalo de tempo de envio de um determinado sensor para o servidor.
+  Usada para alterar o intervalo de tempo de envio de um determinado sensor para o servidor.
 
-É necessário indicar os **segundos** e a **matricula** do sensor
+  É necessário indicar os **segundos** e a **matricula** do sensor
 
