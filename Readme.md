@@ -106,5 +106,5 @@ Nesse projeto entre os sensores e o servidor foram utilizados 2 tipos de protoco
   
 A troca de mensagens entre os sensores e o servidor pode ser vista no diagrama anterior, inclusive o padrão de mensagens adotados por eles.
 
-## 2.2 protcolo HTTP e a API Rest
+## 2.2 protocolo HTTP e API Rest
 
