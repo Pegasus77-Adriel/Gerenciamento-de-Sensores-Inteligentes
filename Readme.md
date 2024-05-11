@@ -115,6 +115,7 @@ No diagrama acima por exemplo, pode ser notado uma das rota da API Rest, sendo e
 ## 2.5 Threads
 Os códigos do sensor e do servidor utilizam threads para receber e enviar mensagens atráves comunicação UDP e TCP respectivamente, de modo que não gere conflito ou atraso no processamento de dados.
 
-Uma thread pode ser descrita como uma unidade básica de processamento dentro de um programa, capaz de executar tarefas relacionadas à aplicação principal de forma independente. A utilização dethreads permite que várias atividades ocorram simultaneamente, o que faz com que diferentes partes do sistema executem suas tarefas quase ao mesmo tempo, embora isso possa criar uma impressão de paralelismo que não é totalmente verdade.
+Uma thread pode ser descrita como uma unidade básica de processamento dentro de um programa, capaz de executar tarefas relacionadas à aplicação principal de forma independente. A utilização de threads permite que várias atividades ocorram simultaneamente, o que faz com que diferentes partes do sistema executem suas tarefas quase ao mesmo tempo, embora isso possa criar uma impressão de paralelismo que não é totalmente verdade.
+
 No código o sensor utiliza uma thread para enviar as medições constamente via UDP para o servidor, e utiliza outra para receber os comandos via TCP provindos do servidor. Já o servidor, usa uma thread para receber os dados dos sensores via UDP, outra thread para realizar conexões TCP com os sensores, e por fim utilza outra para comunicação com a aplicação. 
 , 
